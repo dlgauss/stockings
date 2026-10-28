@@ -12,8 +12,27 @@ from PIL import Image
 from .models import LandingSettings, LegalPage, Order, Size
 
 
+class DemoContentTests(TestCase):
+    """Migration 0004 fills a fresh database with demo content."""
+
+    def test_fresh_database_has_demo_content(self):
+        content = LandingSettings.load()
+        self.assertEqual((content.price, content.old_price), (Decimal('499'), Decimal('1000')))
+        self.assertEqual(content.discount_percent, 50)
+        self.assertEqual(list(Size.objects.values_list('label', flat=True)), ['36–38', '39–42', '43–45'])
+        self.assertEqual(LegalPage.objects.exclude(body_ro='').count(), 3)
+        self.assertContains(self.client.get('/ru/'), '499 лей')
+
+
+def clear_demo_content():
+    LandingSettings.objects.all().delete()
+    Size.objects.all().delete()
+    LegalPage.objects.all().delete()
+
+
 class LandingPageTests(TestCase):
     def setUp(self):
+        clear_demo_content()
         content = LandingSettings.load()
         content.price = Decimal('349.00')
         content.old_price = Decimal('499.00')
@@ -87,6 +106,7 @@ class LandingPageTests(TestCase):
 
 class PhotoTests(TestCase):
     def setUp(self):
+        clear_demo_content()
         self.media = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, self.media)
 
