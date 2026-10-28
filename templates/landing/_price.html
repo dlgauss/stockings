@@ -1,0 +1,13 @@
+{% load i18n %}
+{% if content.price %}
+<div class="price-block">
+  {% if content.discount_percent %}<p class="eyebrow">{% translate "Launch price" %}</p>{% endif %}
+  <div class="price">
+    <span class="price-now">{{ content.price|floatformat:"-2" }} {{ content.currency }}</span>
+    {% if content.discount_percent %}
+    <span class="price-old">{{ content.old_price|floatformat:"-2" }} {{ content.currency }}</span>
+    <span class="price-save">−{{ content.discount_percent }}%</span>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

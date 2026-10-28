@@ -4,7 +4,7 @@
 {% block title %}{% translate "Thank you!" %} · {% translate "Cashmere Termo" %}{% endblock %}
 
 {% block content %}
-  <section class="container page stack" style="gap: 18px">
+  <section class="page">
     <h1>{% translate "Thank you!" %}</h1>
     {% if order_id %}
       <p>{% blocktranslate trimmed %}Your order no. {{ order_id }} has been received.{% endblocktranslate %}</p>
@@ -12,6 +12,6 @@
       <p>{% translate "Your order has been received." %}</p>
     {% endif %}
     <p>{% translate "A manager will call you soon to confirm the details." %}</p>
-    <a class="cta self-start" href="{% url 'landing:home' %}">{% translate "Back to the main page" %}</a>
+    <a class="btn" href="{% url 'landing:home' %}">{% translate "Back to the main page" %}</a>
   </section>
 {% endblock %}

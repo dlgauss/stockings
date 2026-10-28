@@ -4,10 +4,10 @@
 {% block title %}{% translate "Page not found" %} · {% translate "Cashmere Termo" %}{% endblock %}
 
 {% block content %}
-  <section class="container page stack" style="gap: 18px">
-    <p class="muted" style="font-weight: 700; letter-spacing: .4px">404</p>
+  <section class="page">
+    <p class="eyebrow">404</p>
     <h1>{% translate "Page not found" %}</h1>
     <p>{% translate "The link may be outdated or mistyped. The Cashmere Termo set is waiting for you on the main page." %}</p>
-    <a class="cta self-start" href="{% url 'landing:home' %}">{% translate "Back to the main page" %}</a>
+    <a class="btn" href="{% url 'landing:home' %}">{% translate "Back to the main page" %}</a>
   </section>
 {% endblock %}

@@ -5,25 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{% translate "Cashmere Termo" %}{% endblock %}</title>
   <meta name="description" content="{% translate "Cashmere thermal socks gift set: five pairs in five calm shades, in a gift box." %}">
+  <meta name="theme-color" content="#1E1C19">
   {% for link in language_links %}
   <link rel="alternate" hreflang="{{ link.code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ link.url }}">
   {% endfor %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}">
+  {# Lets the CSS hide scroll-reveal content only when the script that reveals it can run. #}
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
   <div class="strip">{% translate "Gift set · 5 pairs · Cashmere Termo" %}</div>
 
   <header class="header">
-    <a class="brand" href="{% url 'landing:home' %}">{% translate "Cashmere Termo" %}</a>
-    <nav class="lang" aria-label="{% translate "Language" %}">
-      {% for link in language_links %}
-      <a href="{{ link.url }}" hreflang="{{ link.code }}" lang="{{ link.code }}"{% if link.active %} aria-current="true"{% endif %}>{{ link.code|upper }}</a>
-      {% endfor %}
-    </nav>
+    <div class="container header-inner">
+      <a class="brand" href="{% url 'landing:home' %}">{% translate "Cashmere Termo" %}</a>
+      <div class="header-actions">
+        <nav class="lang" aria-label="{% translate "Language" %}">
+          {% for link in language_links %}
+          <a href="{{ link.url }}" hreflang="{{ link.code }}" lang="{{ link.code }}"{% if link.active %} aria-current="true"{% endif %}>{{ link.code|upper }}</a>
+          {% endfor %}
+        </nav>
+        <a class="btn btn-outline btn-small header-cta" href="{% url 'landing:home' %}#order">{% translate "Order" %}</a>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -31,23 +39,25 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <span class="brand">{% translate "Cashmere Termo" %}</span>
-      {% if content.company_name or content.company_details %}
-      <span>{{ content.company_name }}{% if content.company_name and content.company_details %} · {% endif %}{{ content.company_details }}</span>
-      {% endif %}
-      {% if content.phone or content.email %}
-      <span>
-        {% if content.phone %}{% translate "Phone" %}: <a href="tel:{{ content.phone|cut:' ' }}">{{ content.phone }}</a>{% endif %}
-        {% if content.phone and content.email %} · {% endif %}
-        {% if content.email %}Email: <a href="mailto:{{ content.email }}">{{ content.email }}</a>{% endif %}
-      </span>
-      {% endif %}
-      {% if content.working_hours %}
-      <span>{% translate "Open daily" %}: {{ content.working_hours }}</span>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand">{% translate "Cashmere Termo" %}</span>
+        <p>{% translate "Cashmere thermal socks gift set: five pairs in five calm shades, in a gift box." %}</p>
+      </div>
+      {% if content.phone or content.email or content.working_hours or content.company_name %}
+      <div class="footer-col">
+        <p class="eyebrow">{% translate "Contacts" %}</p>
+        {% if content.phone %}<a href="tel:{{ content.phone|cut:' ' }}">{{ content.phone }}</a>{% endif %}
+        {% if content.email %}<a href="mailto:{{ content.email }}">{{ content.email }}</a>{% endif %}
+        {% if content.working_hours %}<span>{% translate "Open daily" %}: {{ content.working_hours }}</span>{% endif %}
+        {% if content.company_name or content.company_details %}
+        <span class="footer-company">{{ content.company_name }}{% if content.company_name and content.company_details %} · {% endif %}{{ content.company_details }}</span>
+        {% endif %}
+      </div>
       {% endif %}
       {% if legal_pages %}
-      <div class="footer-links">
+      <div class="footer-col footer-links">
+        <p class="eyebrow">{% translate "Information" %}</p>
         {% if "privacy" in legal_pages %}<a href="{% url 'landing:legal' 'privacy' %}">{% translate "Privacy policy" %}</a>{% endif %}
         {% if "terms" in legal_pages %}<a href="{% url 'landing:legal' 'terms' %}">{% translate "Terms of use" %}</a>{% endif %}
         {% if "returns" in legal_pages %}<a href="{% url 'landing:legal' 'returns' %}">{% translate "Return policy" %}</a>{% endif %}

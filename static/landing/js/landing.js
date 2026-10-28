@@ -1,5 +1,38 @@
-// Order form: quantity stepper, live total on the submit button, city/street dropdowns.
+// Landing page: scroll reveal, sticky order bar on phones, and the order form (quantity stepper,
+// live total on the submit button, city/street dropdowns).
 (function () {
+  // Sections fade in as they scroll into view. The CSS hides them only when <html> has the
+  // "js" class, so without this script (or IntersectionObserver) everything stays visible.
+  var revealed = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    revealed.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealed.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // Phones: an order bar slides in once the hero is scrolled past, and hides at the form.
+  var sticky = document.querySelector('.sticky-cta');
+  var hero = document.querySelector('.hero');
+  var orderSection = document.getElementById('order');
+  if (sticky && hero && orderSection && 'IntersectionObserver' in window) {
+    var visible = { hero: true, order: false };
+    var stickyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible[entry.target === hero ? 'hero' : 'order'] = entry.isIntersecting;
+      });
+      sticky.classList.toggle('is-shown', !visible.hero && !visible.order);
+    });
+    stickyObserver.observe(hero);
+    stickyObserver.observe(orderSection);
+  }
+
   var form = document.querySelector('.order-form');
   if (!form) return;
 
