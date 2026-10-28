@@ -1,0 +1,61 @@
+{% load static i18n %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% translate "Cashmere Termo" %}{% endblock %}</title>
+  <meta name="description" content="{% translate "Cashmere thermal socks gift set: five pairs in five calm shades, in a gift box." %}">
+  {% for link in language_links %}
+  <link rel="alternate" hreflang="{{ link.code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ link.url }}">
+  {% endfor %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap">
+  <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}">
+</head>
+<body>
+
+  <div class="strip">{% translate "Gift set · 5 pairs · Cashmere Termo" %}</div>
+
+  <header class="header">
+    <a class="brand" href="{% url 'landing:home' %}">{% translate "Cashmere Termo" %}</a>
+    <nav class="lang" aria-label="{% translate "Language" %}">
+      {% for link in language_links %}
+      <a href="{{ link.url }}" hreflang="{{ link.code }}" lang="{{ link.code }}"{% if link.active %} aria-current="true"{% endif %}>{{ link.code|upper }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="brand">{% translate "Cashmere Termo" %}</span>
+      {% if content.company_name or content.company_details %}
+      <span>{{ content.company_name }}{% if content.company_name and content.company_details %} · {% endif %}{{ content.company_details }}</span>
+      {% endif %}
+      {% if content.phone or content.email %}
+      <span>
+        {% if content.phone %}{% translate "Phone" %}: <a href="tel:{{ content.phone|cut:' ' }}">{{ content.phone }}</a>{% endif %}
+        {% if content.phone and content.email %} · {% endif %}
+        {% if content.email %}Email: <a href="mailto:{{ content.email }}">{{ content.email }}</a>{% endif %}
+      </span>
+      {% endif %}
+      {% if content.working_hours %}
+      <span>{% translate "Open daily" %}: {{ content.working_hours }}</span>
+      {% endif %}
+      {% if legal_pages %}
+      <div class="footer-links">
+        {% if "privacy" in legal_pages %}<a href="{% url 'landing:legal' 'privacy' %}">{% translate "Privacy policy" %}</a>{% endif %}
+        {% if "terms" in legal_pages %}<a href="{% url 'landing:legal' 'terms' %}">{% translate "Terms of use" %}</a>{% endif %}
+        {% if "returns" in legal_pages %}<a href="{% url 'landing:legal' 'returns' %}">{% translate "Return policy" %}</a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

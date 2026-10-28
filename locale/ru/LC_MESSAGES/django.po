@@ -1,0 +1,689 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 20:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Default photo"
+msgstr "Фото по умолчанию"
+
+msgid "Replaced by the uploaded photo above."
+msgstr "Заменено загруженным фото выше."
+
+msgid "Photos"
+msgstr "Фотографии"
+
+msgid ""
+"Upload a photo to replace the one on the page. Clear the field to go back to"
+" the default photo."
+msgstr ""
+"Загрузите фото, чтобы заменить фото на странице. Отметьте «Удалить», чтобы "
+"вернуть фото по умолчанию."
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Social proof"
+msgstr "Доверие"
+
+msgid "Specs"
+msgstr "Характеристики"
+
+msgid "Delivery"
+msgstr "Доставка"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "Image"
+msgstr "Изображение"
+
+#| msgid "Customer review"
+msgid "Customer"
+msgstr "Клиент"
+
+#| msgid "Order the set"
+msgid "Order details"
+msgstr "Детали заказа"
+
+msgid "Total"
+msgstr "Сумма"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Landing page"
+msgstr "Лендинг"
+
+msgid "Your name"
+msgstr "Ваше имя"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Quantity"
+msgstr "Количество"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "City or village"
+msgstr "Город или село"
+
+msgid "Street and house number"
+msgstr "Улица и номер дома"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "E.g. Chișinău"
+msgstr "Например: Chișinău, Bălți"
+
+msgid "E.g. str. Mihai Viteazul 15"
+msgstr "Например: str. Mihai Viteazul 15"
+
+msgid "Enter a valid phone number."
+msgstr "Введите корректный номер телефона."
+
+msgid "main photo"
+msgstr "главное фото"
+
+msgid ""
+"Top of the page, next to the title. Portrait 3:4, e.g. 1200×1600. Empty: the"
+" default photo is shown."
+msgstr ""
+"Вверху страницы, рядом с заголовком. Вертикальное 3:4, например 1200×1600. "
+"Если пусто — показывается фото по умолчанию."
+
+#| msgid "What's inside the set"
+msgid "\"what's inside\" photo"
+msgstr "фото «Что внутри набора»"
+
+msgid "Next to the list of colours. Portrait 4:5, e.g. 1200×1500."
+msgstr "Рядом со списком цветов. Вертикальное 4:5, например 1200×1500."
+
+msgid "description photo 1"
+msgstr "фото 1 в описании"
+
+msgid "Description section, left. Landscape 4:3, e.g. 1200×900."
+msgstr "Блок описания, слева. Горизонтальное 4:3, например 1200×900."
+
+msgid "description photo 2"
+msgstr "фото 2 в описании"
+
+msgid "Description section, right. Landscape 4:3, e.g. 1200×900."
+msgstr "Блок описания, справа. Горизонтальное 4:3, например 1200×900."
+
+msgid "price"
+msgstr "цена"
+
+msgid "old price"
+msgstr "старая цена"
+
+msgid ""
+"Shown crossed out. The discount badge is calculated from the two prices."
+msgstr ""
+"Показывается зачёркнутой. Скидка (−%) считается автоматически из двух цен."
+
+msgid "currency (RO)"
+msgstr "валюта (RO)"
+
+msgid "currency (RU)"
+msgstr "валюта (RU)"
+
+msgid "promo ends on"
+msgstr "акция до"
+
+msgid "Leave empty to hide the \"offer valid until\" line."
+msgstr "Оставьте пустым, чтобы скрыть строку «Акция действует до»."
+
+#| msgid "How to order"
+msgid "people who ordered"
+msgstr "сколько человек заказали"
+
+#| msgid "%(counter)s person has already ordered this set"
+#| msgid_plural "%(counter)s people have already ordered this set"
+msgid "The number in \"N people have already ordered this set\"."
+msgstr "Число в «N человек уже заказали этот набор»."
+
+msgid "recommend, %"
+msgstr "рекомендуют, %"
+
+#| msgid "%(percent)s%% of buyers recommend the set."
+msgid "The number in \"XX% of buyers recommend the set\"."
+msgstr "Число в «XX% покупателей рекомендуют набор»."
+
+#| msgid "Composition"
+msgid "composition (RO)"
+msgstr "состав (RO)"
+
+#| msgid "Composition"
+msgid "composition (RU)"
+msgstr "состав (RU)"
+
+msgid "size range (RO)"
+msgstr "размеры (RO)"
+
+msgid "size range (RU)"
+msgstr "размеры (RU)"
+
+msgid "care (RO)"
+msgstr "уход (RO)"
+
+msgid "care (RU)"
+msgstr "уход (RU)"
+
+#| msgid "Country of origin"
+msgid "country of origin (RO)"
+msgstr "страна производства (RO)"
+
+#| msgid "Country of origin"
+msgid "country of origin (RU)"
+msgstr "страна производства (RU)"
+
+msgid "delivery area (RO)"
+msgstr "зона доставки (RO)"
+
+msgid "With the preposition, e.g. \"în toată Moldova\"."
+msgstr "С предлогом, например «în toată Moldova»."
+
+msgid "delivery area (RU)"
+msgstr "зона доставки (RU)"
+
+msgid "With the preposition, e.g. \"по всей Молдове\"."
+msgstr "С предлогом, например «по всей Молдове»."
+
+msgid "delivery time (RO)"
+msgstr "срок доставки (RO)"
+
+msgid "E.g. \"1–3 zile\"."
+msgstr "Например «1–3 zile»."
+
+msgid "delivery time (RU)"
+msgstr "срок доставки (RU)"
+
+msgid "E.g. \"1–3 дня\"."
+msgstr "Например «1–3 дня»."
+
+#| msgid "Pay on delivery"
+msgid "cash on delivery"
+msgstr "оплата при получении"
+
+msgid "Shows the \"pay on delivery\" step."
+msgstr "Показывает шаг «Оплата при получении»."
+
+msgid "company name"
+msgstr "название компании"
+
+msgid "company details"
+msgstr "реквизиты"
+
+msgid "Registration number, address, etc."
+msgstr "IDNO, адрес и т. д."
+
+#| msgid "Phone"
+msgid "phone"
+msgstr "телефон"
+
+msgid "email"
+msgstr "email"
+
+msgid "working hours"
+msgstr "часы работы"
+
+msgid "E.g. \"9:00–20:00\"."
+msgstr "Например «9:00–20:00»."
+
+msgid "landing settings"
+msgstr "настройки страницы"
+
+msgid "Landing settings"
+msgstr "Настройки страницы"
+
+msgid "label"
+msgstr "размер"
+
+msgid "E.g. \"36–38\"."
+msgstr "Например «36–38»."
+
+#| msgid "Composition"
+msgid "position"
+msgstr "порядок"
+
+msgid "shown in the form"
+msgstr "показывать в форме"
+
+msgid "size"
+msgstr "размер"
+
+msgid "sizes"
+msgstr "размеры"
+
+msgid "image"
+msgstr "изображение"
+
+msgid "Photo or chat screenshot."
+msgstr "Фото или скриншот переписки."
+
+msgid "caption (RO)"
+msgstr "подпись (RO)"
+
+msgid "caption (RU)"
+msgstr "подпись (RU)"
+
+msgid "shown on the page"
+msgstr "показывать на странице"
+
+msgid "review"
+msgstr "отзыв"
+
+#| msgid "Customer reviews"
+msgid "reviews"
+msgstr "отзывы"
+
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+msgid "Terms of use"
+msgstr "Пользовательское соглашение"
+
+msgid "Return policy"
+msgstr "Условия возврата"
+
+msgid "page"
+msgstr "страница"
+
+msgid "text (RO)"
+msgstr "текст (RO)"
+
+msgid "text (RU)"
+msgstr "текст (RU)"
+
+msgid "legal page"
+msgstr "юридическая страница"
+
+msgid "legal pages"
+msgstr "юридические страницы"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Confirmed"
+msgstr "Подтверждён"
+
+msgid "Shipped"
+msgstr "Отправлен"
+
+msgid "Cancelled"
+msgstr "Отменён"
+
+#| msgid "Your name"
+msgid "name"
+msgstr "имя"
+
+#| msgid "Quantity"
+msgid "quantity"
+msgstr "количество"
+
+msgid "city"
+msgstr "город"
+
+msgid "address"
+msgstr "адрес"
+
+msgid "unit price"
+msgstr "цена за набор"
+
+msgid "Price of one set at the moment of the order."
+msgstr "Цена одного набора на момент заказа."
+
+msgid "currency"
+msgstr "валюта"
+
+#| msgid "Language"
+msgid "language"
+msgstr "язык"
+
+msgid "status"
+msgstr "статус"
+
+msgid "manager note"
+msgstr "заметка менеджера"
+
+msgid "created at"
+msgstr "создан"
+
+msgid "updated at"
+msgstr "изменён"
+
+#| msgid "Order"
+msgid "order"
+msgstr "заказ"
+
+#| msgid "Order"
+msgid "orders"
+msgstr "заказы"
+
+msgid "Popular cities"
+msgstr "Популярные города"
+
+msgid "Searching…"
+msgstr "Ищем…"
+
+msgid "Nothing found. You can keep what you typed."
+msgstr "Ничего не нашли. Можно оставить, как вы написали."
+
+#, python-format
+msgid "Use “%s”"
+msgstr "Оставить «%s»"
+
+msgid "Start typing the street name"
+msgstr "Начните вводить название улицы"
+
+msgid "Choose the city first for more accurate suggestions"
+msgstr "Сначала выберите город — подсказки будут точнее"
+
+msgid "Street suggestions work in Latin letters, e.g. Mihai Viteazul"
+msgstr "Подсказки улиц работают латиницей, например: Mihai Viteazul"
+
+msgid "Don’t forget the house number"
+msgstr "Не забудьте номер дома"
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid "Cashmere Termo"
+msgstr "Cashmere Термо"
+
+msgid ""
+"The link may be outdated or mistyped. The Cashmere Termo set is waiting for "
+"you on the main page."
+msgstr ""
+"Возможно, ссылка устарела или в ней опечатка. Набор Cashmere Термо ждёт вас "
+"на главной странице."
+
+msgid "Back to the main page"
+msgstr "Вернуться на главную"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid ""
+"Cashmere thermal socks gift set: five pairs in five calm shades, in a gift "
+"box."
+msgstr ""
+"Подарочный набор кашемировых термоносков: пять пар пяти спокойных оттенков в"
+" подарочной коробке."
+
+msgid "Gift set · 5 pairs · Cashmere Termo"
+msgstr "Подарочный набор · 5 пар · Cashmere Термо"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Open daily"
+msgstr "Работаем ежедневно"
+
+msgid ""
+"Gift box with five pairs of thermal socks in beige, grey and graphite shades"
+msgstr ""
+"Подарочная коробка с пятью парами термоносков в бежевых, серых и графитовых "
+"оттенках"
+
+msgid "Gift set · 5 pairs"
+msgstr "Подарочный набор · 5 пар"
+
+msgid "Cashmere thermal socks — warmth for every day"
+msgstr "Кашемировые термоноски — тепло на каждый день"
+
+msgid "Five pairs in a gift box: five refined shades, from sand to graphite."
+msgstr ""
+"Пять пар в подарочной коробке: пять благородных оттенков — от песочного до "
+"графита."
+
+msgid "Cashmere softness and a thermal effect"
+msgstr "Мягкость кашемира и термоэффект"
+
+msgid "5 pairs — enough for the whole working week"
+msgstr "5 пар — хватит на всю рабочую неделю"
+
+msgid "Calm natural shades that go with any shoes"
+msgstr "Спокойные натуральные оттенки к любой обуви"
+
+msgid "Ready-made gift box — no wrapping needed"
+msgstr "Готовая подарочная коробка — упаковывать не нужно"
+
+msgid "Order now"
+msgstr "Заказать сейчас"
+
+#, python-format
+msgid "%(counter)s person has already ordered this set"
+msgid_plural "%(counter)s people have already ordered this set"
+msgstr[0] "%(counter)s человек уже заказал этот набор"
+msgstr[1] "%(counter)s человека уже заказали этот набор"
+msgstr[2] "%(counter)s человек уже заказали этот набор"
+msgstr[3] "%(counter)s человек уже заказали этот набор"
+
+msgid "Why people choose Cashmere Termo"
+msgstr "Почему выбирают Cashmere Термо"
+
+msgid "Warmth without the bulk"
+msgstr "Тепло без лишнего объёма"
+
+msgid ""
+"The thermal effect keeps you warm in cold weather, and the sock stays "
+"comfortable in any shoes."
+msgstr ""
+"Термоэффект согревает в холодную погоду, а носок остаётся удобным в любой "
+"обуви."
+
+msgid "Cashmere softness"
+msgstr "Мягкость кашемира"
+
+msgid ""
+"A fabric that feels pleasant to the touch and that you will want to wear "
+"every day."
+msgstr "Приятная на ощупь ткань, которую хочется носить каждый день."
+
+msgid "Five calm shades"
+msgstr "Пять спокойных оттенков"
+
+msgid ""
+"Sand, smoke, khaki, mocha and graphite — easy to match with any outfit."
+msgstr ""
+"Песочный, дымчатый, хаки, мокко и графит — легко подобрать под любой образ."
+
+msgid "A ready-made gift"
+msgstr "Готовый подарок"
+
+msgid "The set already comes in a box — all that's left is to give it."
+msgstr "Набор уже лежит в коробке — остаётся только вручить."
+
+msgid "Three pairs of socks with Cashmere Termo tags"
+msgstr "Три пары носков с бирками Cashmere Термо"
+
+msgid "What's inside the set"
+msgstr "Что внутри набора"
+
+msgid "5 pairs in a gift box. Every pair has a Cashmere Termo tag."
+msgstr "5 пар в подарочной коробке. Каждая пара — с биркой Cashmere Термо."
+
+msgid "Sand"
+msgstr "Песочный"
+
+msgid "Smoke"
+msgstr "Дымчатый"
+
+msgid "Khaki"
+msgstr "Хаки"
+
+msgid "Mocha"
+msgstr "Мокко"
+
+msgid "Graphite"
+msgstr "Графит"
+
+msgid "Warmth you feel from day one"
+msgstr "Тепло, которое чувствуется с первого дня"
+
+msgid ""
+"Cashmere Termo are socks for the cold season: soft, warm and calm in colour."
+" They go with classic shoes, sneakers and boots."
+msgstr ""
+"Cashmere Термо — носки для холодного сезона: мягкие, тёплые и спокойные по "
+"цвету. Подходят к классической обуви, кроссовкам и ботинкам."
+
+msgid "Close-up of the Cashmere Termo tag on the socks"
+msgstr "Бирка Cashmere Термо на носках крупным планом"
+
+msgid "Cashmere Termo sock on a light background"
+msgstr "Носок Cashmere Термо на светлом фоне"
+
+msgid ""
+"All five pairs are packed in one box, so the set is a ready-made gift for "
+"your loved ones or a nice treat for yourself."
+msgstr ""
+"Все пять пар уложены в одну коробку, поэтому набор — готовый подарок для "
+"близких или приятная покупка для себя."
+
+msgid "Order the set"
+msgstr "Заказать набор"
+
+msgid "Specifications"
+msgstr "Характеристики"
+
+msgid "Composition"
+msgstr "Состав"
+
+msgid "In the set"
+msgstr "В наборе"
+
+msgid "5 pairs"
+msgstr "5 пар"
+
+msgid "Colours"
+msgstr "Цвета"
+
+msgid "5 shades"
+msgstr "5 оттенков"
+
+msgid "Packaging"
+msgstr "Упаковка"
+
+msgid "Gift box"
+msgstr "Подарочная коробка"
+
+msgid "Care"
+msgstr "Уход"
+
+msgid "Country of origin"
+msgstr "Страна производства"
+
+msgid "What you get"
+msgstr "Комплектация"
+
+msgid "5 pairs of Cashmere Termo socks and a gift box."
+msgstr "5 пар носков Cashmere Термо и подарочная коробка."
+
+msgid "Customer reviews"
+msgstr "Отзывы покупателей"
+
+#, python-format
+msgid "%(percent)s%% of buyers recommend the set."
+msgstr "%(percent)s%% покупателей рекомендуют набор."
+
+msgid "Customer review"
+msgstr "Отзыв покупателя"
+
+msgid "How to order"
+msgstr "Как заказать"
+
+msgid "Leave a request"
+msgstr "Оставьте заявку"
+
+msgid "Enter your name and phone number."
+msgstr "Укажите имя и номер телефона."
+
+msgid "We call you back"
+msgstr "Мы перезвоним"
+
+msgid "A manager confirms the order details and the size."
+msgstr "Менеджер уточнит детали заказа и размер."
+
+#, python-format
+msgid "We ship the order to %(area)s within %(time)s."
+msgstr "Отправим заказ %(area)s за %(time)s."
+
+#, python-format
+msgid "We ship the order to %(area)s."
+msgstr "Отправим заказ %(area)s."
+
+#, python-format
+msgid "We ship the order within %(time)s."
+msgstr "Отправим заказ за %(time)s."
+
+msgid "We ship the order to your address."
+msgstr "Отправим заказ по вашему адресу."
+
+msgid "Pay on delivery"
+msgstr "Оплата при получении"
+
+msgid "Check the parcel and pay when you receive it."
+msgstr "Осмотрите заказ и оплатите на месте."
+
+msgid "Place your order"
+msgstr "Оформите заказ"
+
+msgid "Leave your details and we will call you to confirm."
+msgstr "Оставьте свои данные — мы свяжемся с вами для подтверждения."
+
+#, python-format
+msgid "Offer valid until %(date)s"
+msgstr "Акция действует до %(date)s"
+
+msgid "Fewer"
+msgstr "Меньше"
+
+msgid "More"
+msgstr "Больше"
+
+msgid "Order"
+msgstr "Заказать"
+
+#, python-format
+msgid ""
+"By clicking the button you agree to the <a href=\"%(privacy_url)s\">privacy "
+"policy</a>."
+msgstr ""
+"Нажимая кнопку, вы соглашаетесь с <a href=\"%(privacy_url)s\">политикой "
+"конфиденциальности</a>."
+
+msgid "By clicking the button you agree to the privacy policy."
+msgstr "Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности."
+
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+#, python-format
+msgid "Your order no. %(order_id)s has been received."
+msgstr "Ваш заказ № %(order_id)s принят."
+
+msgid "Your order has been received."
+msgstr "Ваш заказ принят."
+
+msgid "A manager will call you soon to confirm the details."
+msgstr "Менеджер скоро позвонит вам, чтобы уточнить детали."

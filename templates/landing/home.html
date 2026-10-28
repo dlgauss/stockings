@@ -1,0 +1,254 @@
+{% extends "landing/base.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="{{ content.hero_url }}" width="800" height="1067" alt="{% translate "Gift box with five pairs of thermal socks in beige, grey and graphite shades" %}">
+      {% if content.discount_percent %}<div class="badge">−{{ content.discount_percent }}%</div>{% endif %}
+    </div>
+
+    <div class="hero-body">
+      <div class="pill">{% translate "Gift set · 5 pairs" %}</div>
+      <h1>{% translate "Cashmere thermal socks — warmth for every day" %}</h1>
+      <p class="lead">{% translate "Five pairs in a gift box: five refined shades, from sand to graphite." %}</p>
+
+      <ul class="checks">
+        <li>{% include "landing/_check.svg" %}<span>{% translate "Cashmere softness and a thermal effect" %}</span></li>
+        <li>{% include "landing/_check.svg" %}<span>{% translate "5 pairs — enough for the whole working week" %}</span></li>
+        <li>{% include "landing/_check.svg" %}<span>{% translate "Calm natural shades that go with any shoes" %}</span></li>
+        <li>{% include "landing/_check.svg" %}<span>{% translate "Ready-made gift box — no wrapping needed" %}</span></li>
+      </ul>
+
+      {% if content.price %}
+      <div class="price">
+        <span class="price-now">{{ content.price|floatformat:"-2" }} {{ content.currency }}</span>
+        {% if content.discount_percent %}<span class="price-old">{{ content.old_price|floatformat:"-2" }} {{ content.currency }}</span>{% endif %}
+      </div>
+      {% endif %}
+
+      <a class="cta cta-wide" href="#order">{% translate "Order now" %}</a>
+
+      {% if content.orders_count %}
+      <p class="proof"><span class="dot"></span><span>{% blocktranslate trimmed count counter=content.orders_count %}
+        {{ counter }} person has already ordered this set
+      {% plural %}
+        {{ counter }} people have already ordered this set
+      {% endblocktranslate %}</span></p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section-white">
+    <div class="container">
+      <h2 class="section-title">{% translate "Why people choose Cashmere Termo" %}</h2>
+      <div class="row">
+        <div class="card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#316263" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+          <h3>{% translate "Warmth without the bulk" %}</h3>
+          <p>{% translate "The thermal effect keeps you warm in cold weather, and the sock stays comfortable in any shoes." %}</p>
+        </div>
+        <div class="card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#316263" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+          <h3>{% translate "Cashmere softness" %}</h3>
+          <p>{% translate "A fabric that feels pleasant to the touch and that you will want to wear every day." %}</p>
+        </div>
+        <div class="card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#316263" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>{% translate "Five calm shades" %}</h3>
+          <p>{% translate "Sand, smoke, khaki, mocha and graphite — easy to match with any outfit." %}</p>
+        </div>
+        <div class="card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#316263" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          <h3>{% translate "A ready-made gift" %}</h3>
+          <p>{% translate "The set already comes in a box — all that's left is to give it." %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's inside -->
+  <section class="container split">
+    <div>
+      <img class="inside-img" src="{{ content.inside_url }}" width="800" height="1067" loading="lazy" alt="{% translate "Three pairs of socks with Cashmere Termo tags" %}">
+    </div>
+    <div class="stack" style="gap: 18px">
+      <h2>{% translate "What's inside the set" %}</h2>
+      <p class="muted">{% translate "5 pairs in a gift box. Every pair has a Cashmere Termo tag." %}</p>
+      <ul class="swatches">
+        <li><span class="swatch" style="background: #CDB48A"></span>{% translate "Sand" %}</li>
+        <li><span class="swatch" style="background: #A99DA6"></span>{% translate "Smoke" %}</li>
+        <li><span class="swatch" style="background: #8B8470"></span>{% translate "Khaki" %}</li>
+        <li><span class="swatch" style="background: #6B5F58"></span>{% translate "Mocha" %}</li>
+        <li><span class="swatch" style="background: #2F3236"></span>{% translate "Graphite" %}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section class="section-white">
+    <div class="container stack" style="gap: 24px">
+      <h2>{% translate "Warmth you feel from day one" %}</h2>
+      <p class="narrow">{% translate "Cashmere Termo are socks for the cold season: soft, warm and calm in colour. They go with classic shoes, sneakers and boots." %}</p>
+      <div class="row">
+        <img class="photo" src="{{ content.detail_1_url }}" width="800" height="1067" loading="lazy" alt="{% translate "Close-up of the Cashmere Termo tag on the socks" %}">
+        <img class="photo" src="{{ content.detail_2_url }}" width="800" height="1067" loading="lazy"{% if not content.detail_photo_2 %} style="object-position: 50% 85%"{% endif %} alt="{% translate "Cashmere Termo sock on a light background" %}">
+      </div>
+      <p class="narrow">{% translate "All five pairs are packed in one box, so the set is a ready-made gift for your loved ones or a nice treat for yourself." %}</p>
+      <a class="cta self-start" href="#order">{% translate "Order the set" %}</a>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="container split" style="align-items: flex-start">
+    <div style="flex-basis: 340px">
+      <h2 style="margin-bottom: 20px">{% translate "Specifications" %}</h2>
+      <dl class="specs">
+        {% if content.composition %}<div><dt>{% translate "Composition" %}</dt><dd>{{ content.composition }}</dd></div>{% endif %}
+        <div><dt>{% translate "In the set" %}</dt><dd>{% translate "5 pairs" %}</dd></div>
+        {% if content.size_range %}<div><dt>{% translate "Size" %}</dt><dd>{{ content.size_range }}</dd></div>{% endif %}
+        <div><dt>{% translate "Colours" %}</dt><dd>{% translate "5 shades" %}</dd></div>
+        <div><dt>{% translate "Packaging" %}</dt><dd>{% translate "Gift box" %}</dd></div>
+        {% if content.care %}<div><dt>{% translate "Care" %}</dt><dd>{{ content.care }}</dd></div>{% endif %}
+        {% if content.country %}<div><dt>{% translate "Country of origin" %}</dt><dd>{{ content.country }}</dd></div>{% endif %}
+      </dl>
+    </div>
+    <div class="stack" style="flex-basis: 260px; gap: 12px">
+      <h2 style="margin-bottom: 8px">{% translate "What you get" %}</h2>
+      <div class="note">{% translate "5 pairs of Cashmere Termo socks and a gift box." %}</div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  {% if reviews %}
+  <section class="section-white">
+    <div class="container stack" style="gap: 20px">
+      <h2>{% translate "Customer reviews" %}</h2>
+      {% if content.recommend_percent %}
+      <p class="muted">{% blocktranslate trimmed with percent=content.recommend_percent %}
+        {{ percent }}% of buyers recommend the set.
+      {% endblocktranslate %}</p>
+      {% endif %}
+      <div class="reviews">
+        {% for review in reviews %}
+        <figure class="review">
+          <a href="{{ review.image.url }}" target="_blank" rel="noopener"><img src="{{ review.image.url }}" loading="lazy" alt="{{ review.caption|default:_("Customer review") }}"></a>
+          {% if review.caption %}<figcaption>{{ review.caption }}</figcaption>{% endif %}
+        </figure>
+        {% endfor %}
+      </div>
+      <a class="cta self-start" href="#order">{% translate "Order the set" %}</a>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- How to order -->
+  <section class="container">
+    <h2 class="section-title">{% translate "How to order" %}</h2>
+    <div class="row">
+      <div class="card card-white">
+        <span class="step">1</span>
+        <h3>{% translate "Leave a request" %}</h3>
+        <p>{% translate "Enter your name and phone number." %}</p>
+      </div>
+      <div class="card card-white">
+        <span class="step">2</span>
+        <h3>{% translate "We call you back" %}</h3>
+        <p>{% translate "A manager confirms the order details and the size." %}</p>
+      </div>
+      <div class="card card-white">
+        <span class="step">3</span>
+        <h3>{% translate "Delivery" %}</h3>
+        <p>
+          {% if content.delivery_area and content.delivery_time %}
+            {% blocktranslate trimmed with area=content.delivery_area time=content.delivery_time %}We ship the order to {{ area }} within {{ time }}.{% endblocktranslate %}
+          {% elif content.delivery_area %}
+            {% blocktranslate trimmed with area=content.delivery_area %}We ship the order to {{ area }}.{% endblocktranslate %}
+          {% elif content.delivery_time %}
+            {% blocktranslate trimmed with time=content.delivery_time %}We ship the order within {{ time }}.{% endblocktranslate %}
+          {% else %}
+            {% translate "We ship the order to your address." %}
+          {% endif %}
+        </p>
+      </div>
+      {% if content.cash_on_delivery %}
+      <div class="card card-white">
+        <span class="step">4</span>
+        <h3>{% translate "Pay on delivery" %}</h3>
+        <p>{% translate "Check the parcel and pay when you receive it." %}</p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Order form -->
+  <section id="order" class="order">
+    <div class="container split">
+      <div class="stack" style="flex-basis: 320px; gap: 14px">
+        <h2>{% translate "Place your order" %}</h2>
+        <p>{% translate "Leave your details and we will call you to confirm." %}</p>
+        {% if content.price %}
+        <div class="price">
+          <span class="price-now">{{ content.price|floatformat:"-2" }} {{ content.currency }}</span>
+          {% if content.discount_percent %}<span class="price-old">{{ content.old_price|floatformat:"-2" }} {{ content.currency }}</span>{% endif %}
+        </div>
+        {% endif %}
+        {% if content.promo_until %}
+        <p style="font-weight: 700">{% blocktranslate trimmed with date=content.promo_until|date:"j E Y"|lower %}Offer valid until {{ date }}{% endblocktranslate %}</p>
+        {% endif %}
+      </div>
+
+      <form class="order-form" method="post" action="{{ request.path }}#order" novalidate
+            data-price="{{ content.price|default:''|stringformat:'s' }}" data-currency="{{ content.currency }}" data-locale="{{ LANGUAGE_CODE }}"
+            data-suggest-url="{% url 'address_suggest' %}">
+        {% csrf_token %}
+        {% for error in form.non_field_errors %}<p class="error">{{ error }}</p>{% endfor %}
+
+        {% include "landing/_field.html" with field=form.name %}
+        {% include "landing/_field.html" with field=form.phone %}
+
+        <div class="field-row">
+          <div class="field{% if form.quantity.errors %} has-error{% endif %}">
+            <label for="{{ form.quantity.id_for_label }}">{{ form.quantity.label }}</label>
+            <div class="qty">
+              <button type="button" data-qty="-1" aria-label="{% translate "Fewer" %}">−</button>
+              {{ form.quantity }}
+              <button type="button" data-qty="1" aria-label="{% translate "More" %}">+</button>
+            </div>
+            {% for error in form.quantity.errors %}<p class="error">{{ error }}</p>{% endfor %}
+          </div>
+          {% if form.size %}{% include "landing/_field.html" with field=form.size %}{% endif %}
+        </div>
+
+        {% include "landing/_combo_field.html" with field=form.city kind="city" %}
+        {% include "landing/_combo_field.html" with field=form.address kind="street" %}
+
+        <div class="trap" aria-hidden="true">
+          <label for="{{ form.website.id_for_label }}">Website</label>
+          <input type="text" name="website" id="{{ form.website.id_for_label }}" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="cta cta-wide">
+          {% translate "Order" %}{% if content.price %}<span>&nbsp;— <span data-total>{{ content.price|floatformat:"-2" }} {{ content.currency }}</span></span>{% endif %}
+        </button>
+        <p class="legal-note">
+          {% if "privacy" in legal_pages %}
+            {% url 'landing:legal' 'privacy' as privacy_url %}
+            {% blocktranslate trimmed %}By clicking the button you agree to the <a href="{{ privacy_url }}">privacy policy</a>.{% endblocktranslate %}
+          {% else %}
+            {% translate "By clicking the button you agree to the privacy policy." %}
+          {% endif %}
+        </p>
+      </form>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block scripts %}
+{{ combo_data|json_script:"combo-data" }}
+<script src="{% static 'landing/js/landing.js' %}" defer></script>
+{% endblock %}

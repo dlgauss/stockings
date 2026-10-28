@@ -1,0 +1,21 @@
+# Local settings and secrets (template: .env.example)
+.env
+
+# SQLite database (keep the folder, ignore its contents)
+db/*
+!db/.gitkeep
+
+# Uploaded files and collected static files (live on the server)
+media/
+staticfiles/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store

@@ -1,0 +1,19 @@
+{% load static %}<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cashmere Termo</title>
+  <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}">
+</head>
+<body>
+  {# Rendered without a request or database, so the text is fixed in both languages. #}
+  <main class="container page stack" style="gap: 18px">
+    <span class="brand">Cashmere Termo</span>
+    <h1>Ceva nu a mers bine</h1>
+    <p>Încearcă din nou peste câteva minute.</p>
+    <p class="muted" lang="ru">Что-то пошло не так. Попробуйте ещё раз через несколько минут.</p>
+    <a class="cta self-start" href="/">Cashmere Termo</a>
+  </main>
+</body>
+</html>
