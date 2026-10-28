@@ -39,6 +39,12 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 # Full origins, e.g. https://example.md. Needed for forms when served over HTTPS.
 CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[])
 
+# nginx on the server terminates HTTPS and sets X-Forwarded-Proto. The app port is bound to
+# 127.0.0.1, so only nginx can set this header.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
 
 # Application definition
 
@@ -55,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # serves collected static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,7 +149,17 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Uploaded files (review screenshots)
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = env.path('MEDIA_ROOT', default=BASE_DIR / 'media')
+
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    # Gzip/Brotli copies of static files, served by WhiteNoise.
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
 
 
 # Admin theme

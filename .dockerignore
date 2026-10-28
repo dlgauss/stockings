@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+.venv
+.env
+**/.env
+db
+media
+staticfiles
+deploy
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache

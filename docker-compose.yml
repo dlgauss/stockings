@@ -1,0 +1,18 @@
+# Production on the VPS. Settings come from .env next to this file (template: .env.example).
+#   docker compose build
+#   docker compose run --rm app python manage.py migrate --noinput
+#   docker compose up -d
+name: stocks-landingpage
+
+services:
+  app:
+    build: .
+    env_file: .env
+    environment:  # these win over .env
+      MEDIA_ROOT: /data/media
+    ports:
+      - "127.0.0.1:8221:8000"
+    volumes:
+      - ./db:/srv/app/db  # SQLite (db/db.sqlite3)
+      - ./media:/data/media
+    restart: unless-stopped

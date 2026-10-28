@@ -1,0 +1,67 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+env:
+  DEPLOY_PATH: /home/dlopatenco/stocks-landingpage
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # scp only adds/overwrites files, so remove the old code first (deleted files, e.g. a renamed
+      # migration, must not linger). .env, db/ (SQLite) and media/ are not touched.
+      - name: Remove old code
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            set -e
+            mkdir -p ${{ env.DEPLOY_PATH }}/db ${{ env.DEPLOY_PATH }}/media
+            cd ${{ env.DEPLOY_PATH }}
+            rm -rf landing stocks_landingpage templates static locale deploy manage.py pyproject.toml \
+              uv.lock Dockerfile .dockerignore docker-compose.yml
+      - name: Copy files
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          source: "landing/,stocks_landingpage/,templates/,static/,locale/,deploy/,manage.py,pyproject.toml,uv.lock,Dockerfile,.dockerignore,docker-compose.yml"
+          target: ${{ env.DEPLOY_PATH }}
+          overwrite: true
+      - name: Build, migrate, restart
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          command_timeout: 30m
+          script: |
+            set -e
+            cd ${{ env.DEPLOY_PATH }}
+            docker compose build
+            docker compose run --rm app python manage.py migrate --noinput
+            docker compose up -d
+            docker image prune -f
+      # Runs deploy/nginx/install-site.sh as root (see its header for the one-time sudo setup).
+      # Last on purpose: if it fails, the app is already updated and nginx keeps its old config.
+      - name: Update nginx site
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            set -e
+            if [ ! -x /usr/local/sbin/stockings-nginx ]; then
+              echo "nginx helper not installed yet: run the one-time setup from deploy/nginx/install-site.sh"
+              exit 1
+            fi
+            sudo -n /usr/local/sbin/stockings-nginx
